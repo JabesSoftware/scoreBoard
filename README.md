@@ -19,6 +19,7 @@ The table should have:
 4. Cells take appropiate values.
 5. Cells changed to reflect handicap (colour to show level of handicap and score adjusted accordingly).
 6. Table is centered of screen no matter screen size.
+7. Table data is remembered - perhaps SQL. 
 
 Theme should have:
 1. Table edited in CSS
