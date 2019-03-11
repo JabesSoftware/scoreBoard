@@ -1,29 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>The ScoreBoard</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
+
 <body>
 
-<h1>The Gamers Board</h1>
+<h1 class="textFormat">The Gamers Board</h1>
 
-<! -- Rules for the scoreboard>
-<p>
-    <strong>Who is the best gamer?</strong><br>
-   <div> Win is 3 points</div>
-    Draw is 2 points<br>
-    Loss is 1 points
-</p>
+<!-- Rules for the scoreboard-->
+<h2 class="textFormat">
+    <strong>Keeping track of YOUR wins</strong>
+</h2>
+<ol>
+    <li>Win is 3 points</li>
+    <li>Draw is 2 points</li>
+    <li>Loss is 1 point</li>
+    <li>This page will keep track of your scores to see who is the overall best gamer.</li>
+    <li>Handicapped means 1 point less.</li>
+</ol>
 
-<p>Handicapped means 1 point less.</p>
 
-<! -- The Scoreboard itself>
+<!-- The Scoreboard itself-->
 
-<button type="button">Update Table</button>
+<div class="buttonFormat updateTableLocation"><button type="update">Update Table</button></div>
 
-<table border="5">
-    <thead>
+<div class="table">
+
+    <table>
+        <thead>
         <tr>
             <th>Name</th>
             <th contenteditable='true'> Game 1</th>
@@ -45,17 +53,22 @@
             <td>0</td>
         </tr>
 
-    </thead>
+        </thead>
 
-    <tbody>
+        <tbody>
 
-    </tbody>
-
-</table>
+        </tbody>
 
 
-<! -- Contact info>
-<a href="https://github.com/JabesSoftware"
-title="Contact details">Who made this?</a>
+    </table>
+</div>
+<div class="buttonFormat column"><button type="addColumn">Add Column</button></div>
+<div class="buttonFormat rows"> <button type="addRows">Add Rows</button></div>
+
+
+
+<!-- Contact info-->
+<div class="contactLink"><a href="https://github.com/JabesSoftware" title="Contact details">Who made this?</a></div>
 </body>
+
 </html>

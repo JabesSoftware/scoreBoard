@@ -1,0 +1,54 @@
+* {
+    box-sizing: border-box;
+  }
+.table{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -250px;
+    margin-left: -400px;
+    border: 5px solid black;
+    width:800px;
+    height: 500px;
+}
+ol{
+    text-align: center;
+}
+.textFormat{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: italic;
+    text-align: center;
+}
+ol{
+    list-style: none;
+}
+.updateTableLocation{
+    margin-left: 200px;
+}
+.buttonFormat{
+    position: fixed;
+    border: 2px solid rgb(61, 61, 13);
+    text-align: center;
+    display: inline;
+    top: 80%;
+    left: 40%;
+}
+.column{
+ margin-left: 100px;
+
+}
+.rows{
+    margin-right: 100px;
+}
+body{
+    background-color: rgba(148, 95, 16, 0.3);
+
+}
+.contactLink{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 112px;
+    margin-left: -56px;
+    border: 2px solid black;
+}
