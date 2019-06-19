@@ -45,16 +45,16 @@
         <tr>
             <td contenteditable='true'>Jabes</td>
             <td>0</td>
-            <td contenteditable='true'>0<button contenteditable='false' >Win</button><button contenteditable='false'>Draw</button><button contenteditable='false'>Lost</button></td>
-            <td contenteditable='true'>0<button contenteditable='false' >Win</button><button contenteditable='false'>Draw</button><button contenteditable='false'>Lost</button></td>
+            <td contenteditable='true'>1</td>
+            <td contenteditable='true' id="score" onfocus="javascript:focusCell()">2</td>
 
         </tr>
 
         <tr>
             <td contenteditable='true'>Kane</td>
             <td>0</td>
-            <td contenteditable='true'>0<button contenteditable='false' >Win</button><button contenteditable='false'>Draw</button><button contenteditable='false'>Lost</button></td>
-            <td contenteditable='true'>0<button contenteditable='false' >Win</button><button contenteditable='false'>Draw</button><button contenteditable='false'>Lost</button></td>
+            <td contenteditable='true'>3</span></td>
+            <td contenteditable='true'>4</span></td>
 
         </tr>
 
@@ -69,7 +69,10 @@
 </div>
 <div class="buttonFormat column" onclick="javascript:addCell()"><button type="addColumn">Add Column</button></div>
 <div class="buttonFormat rows" onclick="javascript:addRows()"> <button type="addRows">Add Rows</button></div>
-
+<div class="buttonFormat update" onclick="javascript:updateTable()"><button type="updateTable">UpdateScores!</button></div>
+<div class="buttonFormat plus"><button type="addColumn">+</button></div>
+<div class="buttonFormat draw"><button type="addColumn">=</button></div>
+<div class="buttonFormat minus"><button type="addColumn">-</button></div>
 
 
 <!-- Contact info-->
@@ -77,3 +80,6 @@
 </body>
 
 </html>
+
+<!-- spare code -->
+<!--<td contenteditable='true'><span class="score">1</span><button contenteditable='false' >+</button><button contenteditable='false'>Draw</button><button contenteditable='false'>-</button></td>-->

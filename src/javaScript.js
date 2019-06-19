@@ -1,21 +1,20 @@
-function addRows() {
+// This file for codes that interacts with the table. You will find here:
+// 1. adding columns and rows
+// 2. adding and subtracting scores using buttons
+// 3. updating scores of the table. 
 
-    var table = document.getElementById("myTable");
-    var row = table.insertRow(table.rows.length);
-    var i;
 
-    for (i = 0; i < table.rows[0].cells.length; i++) {
-        if (i == 0) {
-            createCell(row.insertCell(i), "Name", 'row', 'true', 'div');
-        }else if (i > 0) {
-            createCell(row.insertCell(i), "0", 'row', 'true', 'div');
-        }
 
-    }
-}
+//html to insert into table to assign buttons and default scores, as well as allowing parts of rows/columns to be editable. 
+var htmlToUse = '<td contenteditable=' + true + ' ><span>0</td>',
+//size of table
+totalColumns = 2;
+totalRows = 2;
+focusedScore = 0;
 
-function createCell(cell, text, style, editable, element) {
-    var div = document.createElement(element);
+//function to add cells using a format.
+function createCell(cell, text, style, editable) {
+    var div = document.createElement('div');
     var txt = document.createTextNode(text);
     div.appendChild(txt);
     div.setAttribute('class', style);
@@ -23,17 +22,104 @@ function createCell(cell, text, style, editable, element) {
     cell.appendChild(div);
 }
 
+//adds rows to table when clicking on "Add Rows" button. 
+
+function addRows() {
+
+    var table = document.getElementById("myTable");
+    var row = table.insertRow(table.rows.length);
+    var i;
+    if (totalRows <= 4) {
+        for (i = 0; i < table.rows[0].cells.length; i++) {
+            if (i == 0) {
+                totalRows++;
+                createCell(row.insertCell(i), "Name", 'row', 'true'); //adds first cell of the row, which is for the name of the player.
+
+            } else if (i == 1) {
+                createCell(row.insertCell(i), "0", 'row', 'false'); //adds second cell of the row, which is the total score. 
+            } else if (i > 1) {
+                var innerCell = row.insertCell(i);//adds the rest of the cells
+
+                //adds HTML elements to generate the rest of the cell for the length of the row, and also includes buttons. 
+                innerCell.outerHTML = htmlToUse;
+            }
+
+        }
+    } else {
+        alert("Limit Reached");
+    }
+}
+
+
+//adds column when "Add Column" button is clicked. 
 function addCell() {
     var tbl = document.getElementById('myTable'),
-    rowSize = tbl.rows.length,
+        rowSize = tbl.rows.length,
         i;
-    for (i = 0; i < rowSize; i++) {
-            if(i==0){
-             //   createCell(tbl.rows[i].insertCell(tbl.rows[i].cells.length), 'New Game', 'colHeader', 'true', 'div');
-             var tr = document.getElementById('myTable').tHead.children[0];
-             tr.insertCell(tbl.rows[i].cells.length).outerHTML = "<th>Insert Game Name</th>"
-         }else if(i>0){
-             createCell(tbl.rows[i].insertCell(tbl.rows[i].cells.length), '0', 'col', 'true', 'div');
-         }
+    if (totalColumns <= 4) {
+        for (i = 0; i < rowSize; i++) {
+            if (i == 0) {
+                totalColumns++;
+                //inserts first cell at top of new column, which is the game name. 
+                var tr = document.getElementById('myTable').tHead.children[0];
+                tr.insertCell(tbl.rows[i].cells.length).outerHTML = '<th contenteditable=' + true + '>Insert Game Name</th>'
+            } else if (i >= 1) {
+                //fills the rest of the column with cells with buttons and a starting score of zero. 
+                var tr = document.getElementById('myTable').tHead.children[i];
+                tr.insertCell(tbl.rows[i].cells.length).outerHTML = htmlToUse;
+            }
+
+        }
+    } else {
+        alert("Limit Reached!");
+    }
 }
+
+function focusCell() {
+
+   var element = document.getElementById("score").innerHTML;
+   alert(focusedScore);
+   elementToInt = parseInt(element);
+   focusedScore = elementToInt;
+    alert(focusedScore);
+}
+
+//adds +3 to score of a cell. 
+function addPoints() {
+var finalScore = focusedScore + 3;
+    //onClick get value of thisCell
+    // add 3 to value
+}
+
+//adds 1 to score of a cell
+function minusPoints() {
+    //onClick get value of thisCell
+    // add 1 to value
+}
+
+//adds +2 to score of a cell
+function drawPoints() {
+    //onClick get value of thisCell
+    // add 2 to value
+}
+
+//calculates scores in a row and returns total score in the total column
+function updateTable() {
+    var tbl = document.getElementById('myTable'),
+        rowSize = tbl.rows.length;
+    //  tableSize = tbl.length;
+    for (var rowIndex = 1; rowIndex < rowSize; rowIndex++) {
+        var totalValue = 0;
+        for (var columnIndex = 2; columnIndex < rowSize + 1; columnIndex++) {
+
+            //get value of cell
+            var score = tbl.rows[rowIndex].cells[columnIndex].innerHTML;
+            var scoreInt = parseInt(score);
+            //add value of cell to total
+            totalValue = totalValue + scoreInt;
+            //get value of total cell and change to new total
+
+
+        } tbl.rows[rowIndex].cells[1].innerHTML = totalValue;
+    }
 }
