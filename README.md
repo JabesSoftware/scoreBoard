@@ -26,7 +26,8 @@ TODO
 1. A back end - SQL and login.
 2. Cookies.
 3. Draw button added (all cells given same score if no winner and losers).
-4. Option to have a loss score (instead of winner getting 1 point, and loser 0 point, winner can get 3 points while loser gets 1). 
+4. Option to have a loss score (instead of winner getting 1 point, and loser 0 point, winner can get 3 points while loser gets 1).
+5. Fix CSS. Lets be honest, no one likes doing CSS and im not getting paid for this website so im leaving it till last. 
 
 Theme should have:
 1. Table edited in CSS (done)
