@@ -3,6 +3,7 @@
 
 <script src="javaScript.js"></script>
 
+<script src="tableEdit.js"></script>
 
 <head>
     <meta charset="UTF-8">
@@ -21,9 +22,7 @@
 <ol class="textFormat">
     <li>Sometimes you gotta keep track of how often you curbstomp your noob friends.</li>
     <li>Let me keep score while you focus on gaming!</li>
-    <li>Win is 3 points</li>
-    <li>Draw is 2 points</li>
-    <li>Loss is 1 point</li>
+    <li>A win is a point</li>
 </ol>
 
 
@@ -45,16 +44,16 @@
         <tr>
             <td contenteditable='true'>Jabes</td>
             <td>0</td>
-            <td contenteditable='true'>1</td>
-            <td contenteditable='true' id="score" onfocus="javascript:focusCell()">2</td>
+            <td contenteditable='true' ondblclick="javascript:addWinnersPoints()">0</td>
+            <td contenteditable='true' ondblclick="javascript:addWinnersPoints()">0</td>
 
         </tr>
 
         <tr>
             <td contenteditable='true'>Kane</td>
             <td>0</td>
-            <td contenteditable='true'>3</span></td>
-            <td contenteditable='true'>4</span></td>
+            <td contenteditable='true' ondblclick="javascript:addWinnersPoints()">0</span></td>
+            <td contenteditable='true' ondblclick="javascript:addWinnersPoints()">0</span></td>
 
         </tr>
 
@@ -69,7 +68,8 @@
 </div>
 <div class="buttonFormat column" onclick="javascript:addCell()"><button type="addColumn">Add Column</button></div>
 <div class="buttonFormat rows" onclick="javascript:addRows()"> <button type="addRows">Add Rows</button></div>
-<div class="buttonFormat update" onclick="javascript:updateTable()"><button type="updateTable">UpdateScores!</button></div>
+<div class="buttonFormat update" onclick="javascript:updateTable()"><button
+        type="updateTable">UpdateScores!</button></div>
 <div class="buttonFormat plus"><button type="addColumn">+</button></div>
 <div class="buttonFormat draw"><button type="addColumn">=</button></div>
 <div class="buttonFormat minus"><button type="addColumn">-</button></div>
@@ -80,6 +80,3 @@
 </body>
 
 </html>
-
-<!-- spare code -->
-<!--<td contenteditable='true'><span class="score">1</span><button contenteditable='false' >+</button><button contenteditable='false'>Draw</button><button contenteditable='false'>-</button></td>-->
